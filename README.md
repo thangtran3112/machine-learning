@@ -21,6 +21,13 @@
   pip install numpy
 ```
 
+- Or install those libraries, just for the Conda environment:
+
+```bash
+  conda install -p venv/ nltk
+  conda install -p venv/ numpy
+```
+
 - One time action to download punkt_tab, in python code:
 
 ```python
