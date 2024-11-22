@@ -24,12 +24,20 @@
 - One time action to download punkt_tab, in python code:
 
 ```python
-import nltk
-nltk.download('punkt')  # Download the tokenizer models
+  import nltk
+  nltk.download('punkt')  # Download the tokenizer models
 
-from nltk.tokenize import word_tokenize, sent_tokenize
+  from nltk.tokenize import word_tokenize, sent_tokenize
 
-text = "Hello, world! This is NLTK's tokenizer."
-words = word_tokenize(text)  # Tokenizes into words
-sentences = sent_tokenize(text)  # Tokenizes into sentences
+  text = "Hello, world! This is NLTK's tokenizer."
+  words = word_tokenize(text)  # Tokenizes into words
+  sentences = sent_tokenize(text)  # Tokenizes into sentences
+```
+
+### Lemmatization
+
+- Require to download: nltk.download('wordnet')
+
+```python
+  nltk.download('wordnet')
 ```
