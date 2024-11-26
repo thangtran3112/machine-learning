@@ -28,6 +28,20 @@
   conda install -p venv/ numpy
 ```
 
+- [Install skykit-learn](https://scikit-learn.org/stable/install.html). This may install dependency from `numpy` and `scipy`
+
+```bash
+  conda uninstall numpy # just in case
+  conda install -c conda-forge scikit-learn
+```
+
+- Or install with `pip` under conda environment. If there is stack error, uninstall `numpy`
+
+```bash
+  pip unstall numpy
+  pip install --force-reinstall scikit-learn
+```
+
 - One time action to download punkt_tab, in python code:
 
 ```python
