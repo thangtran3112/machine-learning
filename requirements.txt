@@ -1,4 +1,5 @@
-nltk
+nltk=3.9.1
 ipykernel
 pandas
-scikit-learn
+scikit-learn=1.5.2
+gensim=4.3.3
