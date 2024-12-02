@@ -19,6 +19,7 @@
 ```bash
   pip install ntlk
   pip install numpy
+  pip install -r requirements.txt
 ```
 
 - Or install those libraries, just for the Conda environment:
