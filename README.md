@@ -25,8 +25,7 @@
 - Or install those libraries, just for the Conda environment:
 
 ```bash
-  conda install -p venv/ nltk
-  conda install -p venv/ numpy
+  conda install -p venv/ nltk numpy ipykernel pandas scikit-learn pandas gensim
 ```
 
 - [Install skykit-learn](https://scikit-learn.org/stable/install.html). This may install dependency from `numpy` and `scipy`
