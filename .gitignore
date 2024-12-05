@@ -162,3 +162,5 @@ cython_debug/
 #.idea/
 annclassification/logs/
 annclassification/logs/*
+annclassification/regressionlogs/
+annclassification/regressionlogs/*
