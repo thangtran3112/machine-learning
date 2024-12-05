@@ -36,6 +36,10 @@ conda config --set channel_priority strict
 
 ## Streamlit Cloud
 
-- Must set environment variable `ROOT_DIR = "./annclassification"`
+```bash
+  streamlit run app.py
+```
+
+- Must set environment variable `ROOT_DIR = "./simple_rnn_imdb"`
 
 To ensure that Keras and TensorFlow run on a GPU, you need to have the appropriate GPU drivers and libraries installed, such as CUDA and cuDNN. Here are the steps to set up and verify that TensorFlow is using the GPU:

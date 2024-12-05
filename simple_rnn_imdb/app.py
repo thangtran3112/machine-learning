@@ -4,13 +4,18 @@ import tensorflow as tf
 from tensorflow.keras.datasets import imdb
 from tensorflow.keras.preprocessing import sequence
 from tensorflow.keras.models import load_model
+import os
+import streamlit as st
 
 # Load the IMDB dataset word index
 word_index = imdb.get_word_index()
 reverse_word_index = {value: key for key, value in word_index.items()}
 
+# The root directory when running in Streamlit cloud will be different, since this is a mono-repo
+root_dir = os.getenv('ROOT_DIR', './')
 # Load the pre-trained model with ReLU activation
-model = load_model('simple_rnn_imdb.h5')
+model_path = os.path.join(root_dir, 'simple_rnn_imdb.h5')
+model = load_model(model_path)
 
 # Step 2: Helper Functions
 # Function to decode reviews
@@ -24,8 +29,6 @@ def preprocess_text(text):
     padded_review = sequence.pad_sequences([encoded_review], maxlen=500)
     return padded_review
 
-
-import streamlit as st
 ## streamlit app
 # Streamlit app
 st.title('IMDB Movie Review Sentiment Analysis')
