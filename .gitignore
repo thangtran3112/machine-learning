@@ -162,4 +162,3 @@ cython_debug/
 #.idea/
 annclassification/logs/
 annclassification/logs/*
-*.keras
