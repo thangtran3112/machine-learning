@@ -4,18 +4,25 @@ import tensorflow as tf
 from sklearn.preprocessing import StandardScaler, LabelEncoder, OneHotEncoder
 import pandas as pd
 import pickle
+import os
 
 # Load the trained model
-model = tf.keras.models.load_model('./model.h5')
+# The root directory when running in Streamlit cloud will be different, since this is a mono-repo
+root_dir = os.getenv('ROOT_DIR', './')
+model_path = os.path.join(root_dir, 'model.h5')
+model = tf.keras.models.load_model(model_path)
 
 # Load the encoders and scaler
-with open('./label_encoder_gender.pkl', 'rb') as file:
+label_encoder_gender_path = os.path.join(root_dir, 'label_encoder_gender.pkl')
+with open(label_encoder_gender_path, 'rb') as file:
     label_encoder_gender = pickle.load(file)
 
-with open('./onehot_encoder_geo.pkl', 'rb') as file:
+onehot_encoder_geo_path = os.path.join(root_dir, 'onehot_encoder_geo.pkl')
+with open(onehot_encoder_geo_path, 'rb') as file:
     onehot_encoder_geo = pickle.load(file)
 
-with open('./scaler.pkl', 'rb') as file:
+scaler_path = os.path.join(root_dir, 'scaler.pkl')
+with open(scaler_path, 'rb') as file:
     scaler = pickle.load(file)
 
 
