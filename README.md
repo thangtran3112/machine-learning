@@ -1,64 +1,53 @@
-# machine-learning
+## [Install GPU Drivers and Libraries](https://medium.com/@gokulprasath100702/a-guide-to-enabling-cuda-and-cudnn-for-tensorflow-on-windows-11-a89ce11863f1)
 
-## Initializations
+1. [Read compatibility of Nvidia matrix for each GPU](https://docs.nvidia.com/deeplearning/cudnn/latest/reference/support-matrix.html#support-matrix). At this moment, tensorflow 2.17 only works with `CUDA 11.8` and its corresponding `cuDNN`
+2. **Install NVIDIA GPU Driver**: Ensure you have the latest NVIDIA GPU driver installed.
+3. **Install CUDA Toolkit**: Download and install the CUDA Toolkit from the [NVIDIA website](https://developer.nvidia.com/cuda-downloads).
+4. **Install cuDNN**: Download and install cuDNN from the [NVIDIA website](https://developer.nvidia.com/cudnn).
+5. In order for CUDA toolkit to work, we must also install Visual Studio with `Desktop development with C++`. [See guideline here](https://medium.com/@gokulprasath100702/a-guide-to-enabling-cuda-and-cudnn-for-tensorflow-on-windows-11-a89ce11863f1)
 
-```bash
-    conda create -p venv python=3.12
-    conda activate venv/
+## Step 2: Install TensorFlow with GPU Support
+
+Install TensorFlow with GPU support using pip:
+
+```sh
+pip install tensorflow-gpu
 ```
 
-## Tokenization
+## Step 3: Verify TensorFlow is Using the GPU
 
-- Paragraph to sentences (Tokenization into sentence)
-- Sentence to words/vocabolary (Tokenization into words)
-
-## NLTK (Tokenization library)
-
-- Alternative: `spacy`
-
-```bash
-  pip install ntlk
-  pip install numpy
-  pip install -r requirements.txt
-```
-
-- Or install those libraries, just for the Conda environment:
-
-```bash
-  conda install -p venv/ nltk numpy ipykernel pandas scikit-learn pandas gensim
-```
-
-- [Install skykit-learn](https://scikit-learn.org/stable/install.html). This may install dependency from `numpy` and `scipy`
-
-```bash
-  conda uninstall numpy # just in case
-  conda install -c conda-forge scikit-learn
-```
-
-- Or install with `pip` under conda environment. If there is stack error, uninstall `numpy`
-
-```bash
-  pip unstall numpy
-  pip install --force-reinstall scikit-learn
-```
-
-- One time action to download punkt_tab, in python code:
+You can verify that TensorFlow is using the GPU by running the following code:
 
 ```python
-  import nltk
-  nltk.download('punkt')  # Download the tokenizer models
+import tensorflow as tf
 
-  from nltk.tokenize import word_tokenize, sent_tokenize
+# Check if TensorFlow is built with GPU support
+print("Built with GPU support:", tf.test.is_built_with_cuda())
 
-  text = "Hello, world! This is NLTK's tokenizer."
-  words = word_tokenize(text)  # Tokenizes into words
-  sentences = sent_tokenize(text)  # Tokenizes into sentences
+# List available devices
+print("Available devices:")
+for device in tf.config.list_physical_devices():
+    print(device)
+
+# Check if a GPU is available
+print("GPU available:", tf.test.is_gpu_available())
 ```
 
-### Lemmatization
+## Example Code to Run on GPU
 
-- Require to download: nltk.download('wordnet')
+Here is an example of how to ensure your Keras model runs on the GPU:
 
 ```python
-  nltk.download('wordnet')
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Input
+
+# Ensure TensorFlow uses the GPU
+physical_devices = tf.config.list_physical_devices('GPU')
+if physical_devices:
+    try:
+        tf.config.experimental.set_memory_growth(physical_devices[0], True)
+        print("GPU is available and configured.")
+    except RuntimeError as e:
+        print(e)
 ```
