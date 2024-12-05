@@ -1,9 +1,9 @@
 ipykernel==6.29.5
-tensorflow==2.17
+tensorflow==2.18
 pandas==2.2.3
-numpy==1.26.4 
+numpy==2.0.2
 scikit-learn==1.5.1
-tensorboard==2.17.0
+tensorboard==2.18.0
 matplotlib==3.9.2
 streamlit==1.40.1
 scikeras==0.13.0 

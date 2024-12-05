@@ -24,8 +24,8 @@ conda config --set channel_priority strict
     conda activate .\venv\
     conda config --add channels conda-forge
     conda config --set channel_priority strict
-    conda install -p .\venv\ -c conda-forge ipykernel=6.29.5 pandas=2.2.3 numpy=1.26.4 scikit-learn=1.5.1 matplotlib=3.9.2 streamlit==1.40.1
-    pip install tensorflow==2.17 scikeras tensorboard==2.17.0
+    conda install -p .\venv\ -c conda-forge ipykernel=6.29.5 pandas=2.2.3 numpy=2.0.2 scikit-learn=1.5.1 matplotlib=3.9.2 streamlit==1.40.1
+    pip install tensorflow==2.18 scikeras==0.13.0  tensorboard==2.18.0
 ```
 
 - Or, but not preferable compared to using `conda install`:

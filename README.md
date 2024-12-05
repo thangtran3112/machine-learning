@@ -1,6 +1,6 @@
 ## [Install GPU Drivers and Libraries](https://medium.com/@gokulprasath100702/a-guide-to-enabling-cuda-and-cudnn-for-tensorflow-on-windows-11-a89ce11863f1)
 
-1. [Read compatibility of Nvidia matrix for each GPU](https://docs.nvidia.com/deeplearning/cudnn/latest/reference/support-matrix.html#support-matrix). At this moment, tensorflow 2.17 only works with `CUDA 11.8` and its corresponding `cuDNN`
+1. [Windows tensorflow compatibility](https://www.tensorflow.org/install/source_windows). [Linux tensorflow compatibility](https://www.tensorflow.org/install/source#gpu)
 2. **Install NVIDIA GPU Driver**: Ensure you have the latest NVIDIA GPU driver installed.
 3. **Install CUDA Toolkit**: Download and install the CUDA Toolkit from the [NVIDIA website](https://developer.nvidia.com/cuda-downloads).
 4. **Install cuDNN**: Download and install cuDNN from the [NVIDIA website](https://developer.nvidia.com/cudnn).
