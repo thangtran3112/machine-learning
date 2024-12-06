@@ -1,3 +1,10 @@
+# Recurrent Neuron Network
+
+## 128-Node RNN layer
+
+- The training does not use a specific randonmized seed. The prediction training may require experimenting.
+- It would likely be more accurate if we are scaling to 256-neuron RNN layer
+
 ## Installations
 
 - This testing package requires a different conda venv environement, compared to the root venv/
