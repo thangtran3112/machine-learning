@@ -35,9 +35,9 @@ st.title('IMDB Movie Review Sentiment Analysis')
 st.write('Enter a movie review to classify it as positive or negative.')
 
 # User input
-user_input = st.text_area('Movie Review')
+user_input = st.text_area('Movie Review', placeholder='This is an amazing movies, the plot is great and the actor is handsome...')
 
-if st.button('Classify'):
+if st.button('Predict Sentiment'):
 
     preprocessed_input=preprocess_text(user_input)
 
