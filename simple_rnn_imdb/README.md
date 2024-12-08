@@ -4,6 +4,8 @@
 
 - The training does not use a specific randonmized seed. The prediction training may require experimenting.
 - It would likely be more accurate if we are scaling to 256-neuron RNN layer
+- The training is only use a small 25000 data sets, it will need more real dataset to make it accurate
+- Accurracy within the dataset is around 96%.
 
 ## Installations
 

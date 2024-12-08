@@ -28,10 +28,12 @@ conda config --set channel_priority strict
     pip install tensorflow==2.18 scikeras==0.13.0  tensorboard==2.18.0
 ```
 
-- Or, but not preferable compared to using `conda install`:
+- In Ubuntu or MacOS, but not preferable compared to using `conda install`:
 
 ```zsh
   pip install -r requirements.txt
+  export TF_CPP_MIN_LOG_LEVEL=2 # this is needed for GPU training, to filter out INFO and WARNING logs
+  export TF_ENABLE_ONEDNN_OPTS=0
 ```
 
 ## Streamlit Cloud
