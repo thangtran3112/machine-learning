@@ -164,3 +164,10 @@ annclassification/logs/
 annclassification/logs/*
 annclassification/regressionlogs/
 annclassification/regressionlogs/*
+
+simple_rnn_imdb/glove.6B.100d.txt
+simple_rnn_imdb/glove.6B.200d.txt
+simple_rnn_imdb/glove.6B.300d.txt
+simple_rnn_imdb/glove.6B.50d.txt
+simple_rnn_imdb/glove.6B.zip
+simple_rnn_imdb/glove_rnn_imdb.h5

@@ -1,11 +1,21 @@
 # Recurrent Neuron Network
 
-## 128-Node RNN layer
+- Carveat of Simple RNN: the words from the beginning has less weight contribution to the result
+- We can improve the model with LSTM, GRU
+
+## Simple 256-Node RNN layer
 
 - The training does not use a specific randonmized seed. The prediction training may require experimenting.
 - It would likely be more accurate if we are scaling to 256-neuron RNN layer
+- The number of vocabulary used for training is 10000 words
 - The training is only use a small 25000 data sets, it will need more real dataset to make it accurate
 - Accurracy within the dataset is around 96%.
+
+## Using pre-trained GloVe weight to embed inputs, instead of Tensorflow EmbbedingLayer
+
+- 400,000 words vocabulary, pre-trained weights for word2vec
+- Use a much bigger imdb data set
+- Accuracy of imdb dataset around 90%
 
 ## Installations
 
