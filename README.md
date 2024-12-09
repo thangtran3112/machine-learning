@@ -33,21 +33,8 @@ for device in tf.config.list_physical_devices():
 print("GPU available:", tf.test.is_gpu_available())
 ```
 
-## Example Code to Run on GPU
+## Controlling fan in Ubuntu for Asus laptop:
 
-Here is an example of how to ensure your Keras model runs on the GPU:
-
-```python
-import tensorflow as tf
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Input
-
-# Ensure TensorFlow uses the GPU
-physical_devices = tf.config.list_physical_devices('GPU')
-if physical_devices:
-    try:
-        tf.config.experimental.set_memory_growth(physical_devices[0], True)
-        print("GPU is available and configured.")
-    except RuntimeError as e:
-        print(e)
-```
+- [Ask Ubuntu - throttle_thermal_policy set to 1](https://askubuntu.com/questions/1254364/how-to-control-fans-on-an-asus-laptop)
+- [Control GPU fan through python script](https://blog.closex.org/posts/26a7c6ee/)
+- [Script implementation in fan folder](./fan/fan.sh)
