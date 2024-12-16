@@ -28,13 +28,21 @@ python -m spacy download en_core_web_sm
 python -m spacy download de_core_news_sm
 ```
 
-## Example Architecture
+## 1. Sequence to Sequence Learning with LSTM
 
-- 2-Layer LSTM in Encoder, each layer with 2 LSTM cells
+- 2-Layer LSTM in Encoder, each layer with 2 LSTM cells. [1 - Sequence to Sequence Learning.ipynb](./1%20-%20Sequence%20to%20Sequence%20Learning.ipynb)
   ![2-Layer encoder-decoder](./TwoLayerEachTwoLSTMEncoderDecoder.png)
 - Context Vector of 2 Long term memory cells, and 2 Short-term memory cells will be passed to Decoder
 - Alternative: Decode the sequence from EOS backwards, or from SOS (Start of Sentence) forward.
-- Alternatvie: Using `Teacher Forcing` to train Decoder, by using next known word, instead of predicted word
+- The model training use `Teacher Enforcing` probability of 0.5
+
+## 2. Learning Phrase Representations with encoder-decider
+
+Now we have the basic workflow covered, this tutorial will focus on improving our results. Building on our knowledge of PyTorch, we'll implement a second model, which helps with the information compression problem faced by encoder-decoder models. This model will be based off an implementation of [Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation](https://arxiv.org/abs/1406.1078), which uses GRUs.
+
+## 3 - Neural Machine Translation by Jointly Learning to Align and Translate Open In Colab
+
+Next, we learn about attention by implementing [Neural Machine Translation by Jointly Learning to Align and Translate](https://arxiv.org/abs/1409.0473). This further allievates the information compression problem by allowing the decoder to "look back" at the input sentence by creating context vectors that are weighted sums of the encoder hidden states. The weights for this weighted sum are calculated via an attention mechanism, where the decoder learns to pay attention to the most relevant words in the input sentence.
 
 ## References
 
