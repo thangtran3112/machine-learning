@@ -44,6 +44,12 @@ Now we have the basic workflow covered, this tutorial will focus on improving ou
 
 Next, we learn about attention by implementing [Neural Machine Translation by Jointly Learning to Align and Translate](https://arxiv.org/abs/1409.0473). This further allievates the information compression problem by allowing the decoder to "look back" at the input sentence by creating context vectors that are weighted sums of the encoder hidden states. The weights for this weighted sum are calculated via an attention mechanism, where the decoder learns to pay attention to the most relevant words in the input sentence.
 
+## 4 - Transformer - Attention is All You Need
+
+- Research paper for [Attention is All you need](https://arxiv.org/abs/1706.03762)
+- [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)
+- [Udemy Complete guide of Transformer](https://www.udemy.com/course/complete-generative-ai-course-with-langchain-and-huggingface/learn/lecture/44878151#overview)
+
 ## References
 
 Here are some things I looked at while making these tutorials. Some of it may be out of date.
