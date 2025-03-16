@@ -1,0 +1,14 @@
+pandas
+boto3
+scikit-learn
+ipykernel
+ipython
+# nb_black: conda install conda-forge::nb_black
+seaborn
+matplotlib
+sagemaker
+python-dotenv
+ipywidgets
+distro
+opencv-python
+mxnet
